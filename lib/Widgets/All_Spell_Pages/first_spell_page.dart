@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -152,6 +154,10 @@ class _FirstSpellPageState extends State<FirstSpellPage> {
                               letter = 'thirdLetter';
                               track = track + 1;
                             });
+                            // widget.pageController.nextPage(
+                            //   duration: const Duration(seconds: 5),
+                            //   curve: Curves.easeIn,
+                            // );
                           } else {
                             setState(() {
                               failed = 1;
@@ -202,8 +208,9 @@ class _FirstSpellPageState extends State<FirstSpellPage> {
                 child: GestureDetector(
                   onTap: () {
                     widget.pageController.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeIn);
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn,
+                    );
                   },
                   child: Container(
                       width: 200,

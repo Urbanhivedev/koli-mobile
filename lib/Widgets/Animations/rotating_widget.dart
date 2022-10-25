@@ -14,8 +14,8 @@ class _RotatingWidgetState extends State<RotatingWidget>
     with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 20),
-  )..repeat(period: const Duration(seconds: 20));
+    duration: const Duration(seconds: 1),
+  )..repeat(period: const Duration(seconds: 3));
 
   @override
   void dispose() {
