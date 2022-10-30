@@ -6,12 +6,12 @@ import 'package:koli/Widgets/All_Basic_Pages/second_basic_page.dart';
 import 'package:koli/Widgets/All_Basic_Pages/third_basic_page.dart';
 
 class BasicPage extends StatelessWidget {
+  @override
   BasicPage({Key? key}) : super(key: key);
 
-  @override
   // final PageController pageController = PageController(initialPage: initial);
-  List<Widget> BasicPageList = [
-    const FirstBasicPage(),
+  List<Widget> basicPageList = [
+    FirstBasicPage(),
     const SecondBasicPage(),
     const ThirdBasicPage(),
     const FourthBasicPage(),
@@ -23,9 +23,9 @@ class BasicPage extends StatelessWidget {
       child: Scaffold(
         body: PageView.builder(
           // dragStartBehavior: DragStartBehavior.down,
-          itemCount: BasicPageList.length,
+          itemCount: basicPageList.length,
           itemBuilder: (BuildContext context, int index) {
-            return BasicPageList[index];
+            return basicPageList[index];
             //   print(user?[index]!.technical);
           },
         ),
