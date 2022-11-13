@@ -15,7 +15,7 @@ class SpellPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> MatchSpellList = [
+    List<Widget> matchSpellList = [
       FirstSpellPage(
         pageController: _pageController,
       ),
@@ -43,9 +43,9 @@ class SpellPage extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           controller: _pageController,
           // dragStartBehavior: DragStartBehavior.down,
-          itemCount: MatchSpellList.length,
+          itemCount: matchSpellList.length,
           itemBuilder: (BuildContext context, int index) {
-            return MatchSpellList[index];
+            return matchSpellList[index];
             //   print(user?[index]!.technical);
           },
         ),
@@ -99,7 +99,11 @@ class EmptyBox extends StatelessWidget {
     return Container(
       height: 50,
       width: 50,
-      decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+        ),
+      ),
     );
   }
 }

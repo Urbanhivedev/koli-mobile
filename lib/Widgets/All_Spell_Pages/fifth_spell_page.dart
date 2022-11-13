@@ -150,10 +150,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                             setState(() {
                               letter = 'fifthLetter';
                               track = track + 1;
-
-                              print(1);
-                              print(track);
-                              print(letter);
                             });
                           } else {
                             setState(() {
@@ -163,7 +159,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             });
@@ -189,7 +184,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             });
@@ -214,7 +208,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                 .then((value) {
                               setState(() {
                                 failed = 0;
-                                print('this is $failed');
                               });
                             });
                           }
@@ -240,7 +233,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             }
@@ -258,7 +250,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             }
@@ -285,7 +276,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             }
@@ -303,7 +293,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             }
@@ -328,7 +317,6 @@ class _FifthSpellPageState extends State<FifthSpellPage> {
                                 .then((value) {
                               setState(() {
                                 failed = 0;
-                                print('this is $failed');
                               });
                             });
                           }

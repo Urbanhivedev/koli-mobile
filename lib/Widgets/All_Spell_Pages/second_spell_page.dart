@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -130,10 +132,6 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
                             setState(() {
                               letter = 'secondLetter';
                               track = track + 1;
-
-                              print(1);
-                              print(track);
-                              print(letter);
                             });
                           } else {
                             setState(() {
@@ -142,7 +140,6 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             });
@@ -160,6 +157,12 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
                               letter = 'thirdLetter';
                               track = track + 1;
                             });
+                            Timer(const Duration(seconds: 3), () {
+                              widget.pageController.nextPage(
+                                duration: const Duration(seconds: 1),
+                                curve: Curves.easeIn,
+                              );
+                            });
                           } else {
                             setState(() {
                               failed = 1;
@@ -168,7 +171,6 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
                                   .then((value) {
                                 setState(() {
                                   failed = 0;
-                                  print('this is $failed');
                                 });
                               });
                             });
@@ -193,7 +195,6 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
                                 .then((value) {
                               setState(() {
                                 failed = 0;
-                                print('this is $failed');
                               });
                             });
                           }
@@ -203,51 +204,51 @@ class _SecondSpellPageState extends State<SecondSpellPage> {
             ),
           ],
         ),
-        track > 3
-            ? Positioned(
-                bottom: 30,
-                right: 10,
-                child: GestureDetector(
-                  onTap: () {
-                    widget.pageController.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeIn);
-                  },
-                  child: Container(
-                      width: 200,
-                      height: 55,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(55),
-                          color: Colors.black),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            width: 120,
-                            height: 35,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(35),
-                                color: Colors.white),
-                            child: const Center(
-                                child: Text(
-                              'Next',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 25),
-                            )),
-                          ),
-                          Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.white),
-                            child: const Icon(
-                                Icons.keyboard_double_arrow_right_rounded),
-                          ),
-                        ],
-                      )),
-                ))
-            : const SizedBox()
+        // track > 3
+        //     ? Positioned(
+        //         bottom: 30,
+        //         right: 10,
+        //         child: GestureDetector(
+        //           onTap: () {
+        //             widget.pageController.nextPage(
+        //                 duration: const Duration(milliseconds: 500),
+        //                 curve: Curves.easeIn);
+        //           },
+        //           child: Container(
+        //               width: 200,
+        //               height: 55,
+        //               decoration: BoxDecoration(
+        //                   borderRadius: BorderRadius.circular(55),
+        //                   color: Colors.black),
+        //               child: Row(
+        //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //                 children: [
+        //                   Container(
+        //                     width: 120,
+        //                     height: 35,
+        //                     decoration: BoxDecoration(
+        //                         borderRadius: BorderRadius.circular(35),
+        //                         color: Colors.white),
+        //                     child: const Center(
+        //                         child: Text(
+        //                       'Next',
+        //                       style: TextStyle(
+        //                           fontWeight: FontWeight.bold, fontSize: 25),
+        //                     )),
+        //                   ),
+        //                   Container(
+        //                     width: 30,
+        //                     height: 30,
+        //                     decoration: BoxDecoration(
+        //                         borderRadius: BorderRadius.circular(30),
+        //                         color: Colors.white),
+        //                     child: const Icon(
+        //                         Icons.keyboard_double_arrow_right_rounded),
+        //                   ),
+        //                 ],
+        //               )),
+        //         ))
+        //     : const SizedBox()
       ],
     );
   }

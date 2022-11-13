@@ -10,8 +10,8 @@ class BasicPage extends StatelessWidget {
   BasicPage({Key? key}) : super(key: key);
 
   // final PageController pageController = PageController(initialPage: initial);
-  List<Widget> basicPageList = [
-    FirstBasicPage(),
+  final List<Widget> basicPageList = [
+    const FirstBasicPage(),
     const SecondBasicPage(),
     const ThirdBasicPage(),
     const FourthBasicPage(),

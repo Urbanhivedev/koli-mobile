@@ -35,22 +35,22 @@ class ThirdMatchPage extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MatchesWidget(
+            const MatchesWidget(
               name: 'Goat',
               imageUrl: 'assets/images/goat.png',
             ),
             verticalSpacer(height: 25),
-            MatchesWidget(
+            const MatchesWidget(
               name: 'Sheep',
               imageUrl: 'assets/images/sheep.png',
             ),
             verticalSpacer(height: 25),
-            MatchesWidget(
+            const MatchesWidget(
               name: 'Dog',
               imageUrl: 'assets/images/dog.png',
             ),
             verticalSpacer(height: 25),
-            MatchesWidget(
+            const MatchesWidget(
               name: 'Turtle',
               imageUrl: 'assets/images/turtle.png',
             ),

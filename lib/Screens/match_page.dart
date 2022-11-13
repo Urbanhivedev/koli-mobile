@@ -11,7 +11,7 @@ class MatchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> MatchPageList = [
+    List<Widget> matchPageList = [
       const FirstMatchPage(),
       const SecondMatchPage(),
       const ThirdMatchPage(),
@@ -21,10 +21,11 @@ class MatchPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: PageView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           // dragStartBehavior: DragStartBehavior.down,
-          itemCount: MatchPageList.length,
+          itemCount: matchPageList.length,
           itemBuilder: (BuildContext context, int index) {
-            return MatchPageList[index];
+            return matchPageList[index];
             //   print(user?[index]!.technical);
           },
         ),
@@ -34,13 +35,13 @@ class MatchPage extends StatelessWidget {
 }
 
 class MatchesWidget extends StatelessWidget {
-  MatchesWidget({
+  const MatchesWidget({
     required this.name,
     required this.imageUrl,
     Key? key,
   }) : super(key: key);
-  String name;
-  String imageUrl;
+  final String name;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +67,11 @@ class MatchesWidget extends StatelessWidget {
                 border: Border.all(color: Colors.black),
               ),
               child: Center(
-                  child: Text(
-                name,
-                style: const TextStyle(fontSize: 24),
-              )),
+                child: Text(
+                  name,
+                  style: const TextStyle(fontSize: 24),
+                ),
+              ),
             ),
           ],
         ),

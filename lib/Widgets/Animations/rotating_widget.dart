@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class RotatingWidget extends StatefulWidget {
-  RotatingWidget({required this.child, Key? key}) : super(key: key);
+  const RotatingWidget({
+    required this.child,
+    Key? key,
+  }) : super(key: key);
 
-  Widget child;
+  final Widget child;
 
   @override
   State<RotatingWidget> createState() => _RotatingWidgetState();
